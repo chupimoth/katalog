@@ -1,0 +1,41 @@
+{block content}
+<h1>Detail e-booku</h1>
+
+<div class="card mt-3">
+    <div class="card-body">
+
+        <h3 class="card-title">{$ebook->title}</h3>
+
+        <table class="table table-bordered mt-3">
+            <tr>
+                <th>Autor</th>
+                <td>{$ebook->author}</td>
+            </tr>
+            <tr>
+                <th>Žánr</th>
+                <td>{$ebook->genre}</td>
+            </tr>
+            <tr>
+                <th>Rok vydání</th>
+                <td>{$ebook->year}</td>
+            </tr>
+            <tr>
+                <th>Cena</th>
+                <td>{$ebook->price}</td>
+            </tr>
+            <tr>
+                <th>Hodnocení</th>
+                <td>{$ebook->rating}</td>
+            </tr>
+            <tr>
+                <th>Popis</th>
+                <td>{$ebook->description}</td>
+            </tr>
+        </table>
+
+        <a n:href="Ebooks:list" class="btn btn-secondary">Zpět na seznam</a>
+        <a n:href="Ebooks:edit, $ebook->id" class="btn btn-primary">Upravit</a>
+
+    </div>
+</div>
+{/block}

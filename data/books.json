@@ -1,0 +1,56 @@
+[
+  {
+    "title": "Svět podle Garpa",
+    "author": "John Irving",
+    "genre": "Fiction",
+    "year": 1978,
+    "price": 9.50,
+    "rating": 8,
+    "description": "Příběh o rodině a nečekaných událostech v životě Garpových."
+  },
+  {
+    "title": "Město a hvězdy",
+    "author": "Arthur C. Clarke",
+    "genre": "Science Fiction",
+    "year": 1956,
+    "price": 11.00,
+    "rating": 9,
+    "description": "Klasická sci-fi o vzdálené civilizaci a člověku v ní."
+  },
+  {
+    "title": "Malé ženy",
+    "author": "Louisa May Alcott",
+    "genre": "Classic",
+    "year": 1868,
+    "price": 7.50,
+    "rating": 9,
+    "description": "Příběh o životě a dospívání čtyř sester v 19. století."
+  },
+  {
+    "title": "Pán much",
+    "author": "William Golding",
+    "genre": "Fiction",
+    "year": 1954,
+    "price": 6.99,
+    "rating": 8,
+    "description": "Allegorický příběh o skupině chlapců na opuštěném ostrově."
+  },
+  {
+    "title": "Kdo chytá v žitě",
+    "author": "J.D. Salinger",
+    "genre": "Classic",
+    "year": 1951,
+    "price": 7.50,
+    "rating": 8,
+    "description": "Příběh dospívajícího Holdena Caulfielda a jeho vnímání světa."
+  },
+  {
+    "title": "Lovec draků",
+    "author": "Robin Hobb",
+    "genre": "Fantasy",
+    "year": 1997,
+    "price": 10.00,
+    "rating": 9,
+    "description": "Pokračování příběhu mladého hrdiny a jeho dračího osudu."
+  }
+]

@@ -11,21 +11,25 @@
                     <th>Rok</th>
                     <th>Cena</th>
                     <th>Hodnocení</th>
-                    <th>Upravit</th>
-                    <th>Smazat</th>
+                    <th class="hide-on-print">Upravit</th>
+                    <th class="hide-on-print">Smazat</th>
                 </tr>
             </thead>
             <tbody>
             {foreach $items as $ebook}
                 <tr>
-                    <td>{$ebook['title']}</td>
+                    <td>
+                        <a n:href="Ebooks:detail, $ebook['id']">
+                            {$ebook['title']}
+                        </a>
+                    </td>
                     <td>{$ebook['author']}</td>
                     <td>{$ebook['genre']}</td>
                     <td>{$ebook['year']}</td>
                     <td>{$ebook['price']}</td>
                     <td>{$ebook['rating']}</td>
-                    <td><a n:href="Ebooks:edit, $ebook['id']">Upravit</a></td>
-                    <td><a n:href="Ebooks:delete, $ebook['id']">Smazat</a></td>
+                    <td class="hide-on-print"><a n:href="Ebooks:edit, $ebook['id']">Upravit</a></td>
+                    <td class="hide-on-print"><a n:href="Ebooks:delete, $ebook['id']">Smazat</a></td>
                 </tr>
             {/foreach}
             </tbody>

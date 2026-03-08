@@ -98,6 +98,17 @@ final class EbooksPresenter extends \App\Core\BasePresenter
         return $paginator;
     }
 
+    public function actionDetail(int $id): void
+    {
+        $ebook = $this->ebookModel->getById($id);
+
+        if (!$ebook) {
+            $this->error('E-book nenalezen');
+        }
+
+        $this->template->ebook = $ebook;
+    }
+
     public function actionEdit(int $id)
     {
         $ebook = $this->ebookModel->getById($id);
@@ -121,5 +132,24 @@ final class EbooksPresenter extends \App\Core\BasePresenter
         $this->ebookModel->delete($id);
         $this->flashMessage('E-book byl úspěšně smazán');
         $this->redirect('Ebooks:list');
+    }
+    public function actionImport(): void
+    {
+        $file = __DIR__ . '/../../../data/books.json';
+
+        if (!file_exists($file)) {
+            $this->flashMessage('Soubor books.json nenalezen', 'error');
+            $this->redirect('list');
+        }
+
+        $json = file_get_contents($file);
+        $books = json_decode($json, true);
+
+        foreach ($books as $book) {
+            $this->ebookModel->insert($book);
+        }
+
+        $this->flashMessage('Import dokončen');
+        $this->redirect('list');
     }
 }
