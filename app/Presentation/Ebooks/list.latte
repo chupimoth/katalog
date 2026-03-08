@@ -1,0 +1,36 @@
+{block content}
+    <h1>Seznam e-booků</h1>
+
+    <div class="table-responsive" id="table-wrapper">
+        <table id="ebook-list" class="table table-striped table-hover align-middle table-bordered mt-3">
+            <thead class="table-dark">
+                <tr>
+                    <th>Název</th>
+                    <th>Autor</th>
+                    <th>Žánr</th>
+                    <th>Rok</th>
+                    <th>Cena</th>
+                    <th>Hodnocení</th>
+                    <th>Upravit</th>
+                    <th>Smazat</th>
+                </tr>
+            </thead>
+            <tbody>
+            {foreach $items as $ebook}
+                <tr>
+                    <td>{$ebook['title']}</td>
+                    <td>{$ebook['author']}</td>
+                    <td>{$ebook['genre']}</td>
+                    <td>{$ebook['year']}</td>
+                    <td>{$ebook['price']}</td>
+                    <td>{$ebook['rating']}</td>
+                    <td><a n:href="Ebooks:edit, $ebook['id']">Upravit</a></td>
+                    <td><a n:href="Ebooks:delete, $ebook['id']">Smazat</a></td>
+                </tr>
+            {/foreach}
+            </tbody>
+        </table>
+    </div>
+
+    {control paginator}
+{/block}

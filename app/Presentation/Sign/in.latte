@@ -1,0 +1,14 @@
+{block content}
+<h1>Přihlášení</h1>
+{control signInForm}
+{/block}
+{block scripts}
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('form');
+    form.addEventListener('submit', e => {
+        const email = form.querySelector('[name=email]').value;
+    });
+});
+</script>
+{/block}

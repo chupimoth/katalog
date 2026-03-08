@@ -1,17 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-
-	<title>{ifset title}{include title|stripHtml} | {/ifset}Nette Web</title>
-
-	{asset? 'main.js'}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{block title}E-book katalog{/block}</title>
+<link rel="stylesheet" href="{$basePath}/css/bootstrap.min.css">
+<link rel="stylesheet" id="global" href="{$basePath}/css/global.css">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="{$basePath}/js/bootstrap.bundle.min.js"></script>
+<script src="{$basePath}/js/netteForms.min.js"></script>
+<script src="{$basePath}/js/app.js"></script>
 </head>
+<body class="{$theme} bg-gradient bg-primary bg-opacity-10">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="{link Ebooks:list}">E-book Database</a>
 
-<body>
-	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-	{include content}
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+
+                {if $user->isLoggedIn()}
+                    <li class="nav-item"><a class="nav-link" href="{link Ebooks:list}">Seznam e-booků</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{link Ebooks:add}">Přidat e-book</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{link Sign:out}">Odhlásit</a></li>
+                {else}
+                    <li class="nav-item"><a class="nav-link" href="{link Sign:in}">Přihlášení</a></li>
+                {/if}
+            </ul>
+        </div>
+    </div>
+</nav> 
+
+<div class="container">    
+    {foreach $flashes as $flash}
+		<div class="alert alert-danger">{$flash->message}</div>
+    {/foreach}
+
+    {include content}
+    {block scripts}{/block}
+</div>
 </body>
 </html>

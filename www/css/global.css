@@ -1,0 +1,120 @@
+body{margin:0;}
+body.theme-blue{
+    --main-text: #fff;
+    --accent-bg: #e7f1ff;
+    
+}
+
+/* Červené téma */
+body.theme-red{
+  --bs-pagination-active-bg: #F00;
+  /* Základní barvy */
+  --bs-blue: #d9534f;           /* nahrazená modrá -> červená */
+  --bs-indigo: #d9534f;         /* indigo nahrazeno červenou */
+  --bs-primary: #d9534f !important;  
+  --bs-primary-rgb: 217, 83, 79; /* RGB verze červené */
+
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+
+  --bs-white: #fff;
+  --bs-black: #000;
+
+  /* Body a texty */
+  --bs-body-bg: #ffffff;
+  --bs-body-color: #212529;
+
+  /* Buttons */
+  --bs-btn-bg: var(--bs-primary) !important;
+  --bs-btn-color: #fff;
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: rgba(var(--bs-primary-rgb), 0.85);
+  --bs-btn-hover-border-color: rgba(var(--bs-primary-rgb), 0.9);
+
+  /* Navbar */
+  --bs-navbar-bg: var(--bs-primary);
+  --bs-navbar-color: #fff;
+  --bs-navbar-hover-color: rgba(255,255,255,.75);
+
+  /* Alerts */
+  --bs-alert-primary-bg: var(--bs-primary);
+  --bs-alert-primary-color: #fff;
+
+  /* Cards */
+  --bs-card-border-color: rgba(0,0,0,.125);
+  --bs-card-bg: #fff;
+
+  /* odkazy, navbar… */
+  --bs-link-color: var(--bs-primary);
+  --bs-navbar-bg: var(--bs-primary);
+  --bs-primary: #d9534f;
+  --bs-primary-rgb: 217,83,79;
+}
+
+body.theme-red .active>.page-link, .page-link.active{
+background-color: #d9534f !important; 
+border-color: #d9534f;
+}
+
+body.theme-red .btn-primary {
+  background-color: #d9534f !important;
+  border-color: #d9534f !important;
+  color: #fff !important;
+}
+
+body.theme-red .btn-primary:hover,
+body.theme-red .btn-primary:focus {
+  background-color: #c9302c !important;
+  border-color: #ac2925 !important;
+}
+
+
+a{color:#000;}
+th{text-align: left;}
+#frm-cdForm input{
+    width: 100%;
+    box-sizing: border-box;
+}
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5); 
+}
+.modal-content{
+    background: white;
+    margin: 15% auto;
+    padding: 20px;
+    width: 300px;
+    border-radius: 5px; 
+}
+.close { float: right; cursor: pointer; }
+
+input + .error{
+    color: #F00;
+}
+
+#cd-list{
+    white-space: nowrap;
+}
+#clearSearch{
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+#table-wrapper{
+    min-height: 280px;
+}
+
+#frm-cdForm td,#frm-cdForm th{
+padding-top: 4px;    
+}

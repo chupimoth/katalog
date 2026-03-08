@@ -1,0 +1,15 @@
+<nav aria-label="Stránkování">
+  <ul class="pagination justify-content-center">
+    {foreach $pages as $page}
+    {if $page === $currentPage}
+        <li class="page-item active" aria-current="page">
+            <span class="page-link m-1">{$page}</span>
+        </li>
+    {else}
+        <li class="page-item">
+            <a class="page-link m-1" href="{$presenter->link('this', ['page' => $page])}">{$page}</a>
+        </li>
+    {/if}
+    {/foreach}  
+  </ul>
+</nav>

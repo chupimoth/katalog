@@ -1,7 +1,9 @@
 # see https://doc.nette.org/en/configuring
 
 parameters:
-
+    login:
+        user: "user@example.com"
+        pass2: "heslo123"
 
 application:
 	errorPresenter:
@@ -11,9 +13,9 @@ application:
 
 
 database:
-	dsn: 'sqlite::memory:'
-	user:
-	password:
+    dsn: 'mysql:host=127.0.0.1;dbname=ebooks;charset=utf8'
+    user: 'root'
+    password: ''
 
 
 latte:
